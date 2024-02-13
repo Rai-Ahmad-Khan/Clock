@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/Style.css">
+    <link rel="stylesheet" href="clock.js">
+</head>
+<body>
+    <div class="clock">
+        <div class="center-nut"></div>
+        <div class="center-nut-2"></div>
+        <div class="indecators">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="big-intecators"></div>
+        </div>
+        <div class="sec-hand">
+            <div class="sec"></div>
+        </div>
+        <div class="min-hand">
+            <div class="min"></div>
+        </div>
+        <div class="hour-hand">
+            <div class="hour"></div>
+        </div>
+    </div>
+
+    <script>
+        const sec = document.querySelector(".sec")
+        const min = document.querySelector(".min")
+        const hour = document.querySelector(".hour")
+        const indicators = document.querySelectorAll(".indecators div")
+
+      
+        let rotate_prop= 36;
+        indicators.forEach((indicator) => {
+            indicator.style.transform = `rotate(${rotate_prop}deg) translateY(-170px)`;
+            rotate_prop=rotate_prop +6 ;
+        });
+
+
+        setInterval(function () {
+            let time = new Date();
+            let secs = time.getSeconds() * 6;
+            let mins = time.getMinutes() * 6;
+            let hours = time.getHours() * 30;
+            sec.style.transform = `rotateZ(${secs}deg)`;
+            min.style.transform = `rotateZ(${mins}deg)`;
+            hour.style.transform = `rotateZ(${hours}deg)`;
+        });
+    </script>
+</body>
+</html>
